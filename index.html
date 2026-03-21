@@ -112,3 +112,130 @@
     </div>
 </body>
 </html>
+Note the links inside the cards (python-automation-guide/index.html, etc.) assume the three product folders sit inside the repo root alongside this index.html. Make sure those folders are pushed too.
+
+Skylarbot
+4:25
+
+
+no. the index page had to be outside the other folders so you need to add a layer of \ to ensure we are accessing the other products
+
+You
+4:30
+
+
+htmlCopyCopied!
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Automation Guide — Save 10+ Hours a Week</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 50%, #16213e 100%);
+            min-height: 100vh;
+            color: #e0e0e0;
+            padding: 60px 20px;
+        }
+        .container { max-width: 900px; margin: 0 auto; }
+        header { text-align: center; margin-bottom: 60px; }
+        h1 { font-size: 3em; color: #00d4ff; text-shadow: 0 0 30px rgba(0,212,255,0.4); margin-bottom: 15px; }
+        .tagline { font-size: 1.3em; color: #888; max-width: 600px; margin: 0 auto; line-height: 1.6; }
+        .badge { 
+            display: inline-block; background: rgba(0,212,255,0.15); border: 1px solid #00d4ff; 
+            color: #00d4ff; padding: 6px 16px; border-radius: 20px; font-size: 0.85em; 
+            margin-top: 20px; letter-spacing: 1px; text-transform: uppercase;
+        }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; margin-bottom: 50px; }
+        .card {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 16px;
+            padding: 32px 28px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        .card:hover { 
+            border-color: #00d4ff; 
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0,212,255,0.15);
+        }
+        .card-icon { font-size: 2.5em; margin-bottom: 16px; }
+        .card h2 { color: #fff; font-size: 1.3em; margin-bottom: 10px; }
+        .card p { color: #888; line-height: 1.6; font-size: 0.95em; }
+        .card .price { color: #00d4ff; font-weight: bold; margin-top: 16px; font-size: 1.1em; }
+        .card .arrow { float: right; color: #00d4ff; font-size: 1.2em; }
+        .highlights { background: rgba(255,255,255,0.03); border-radius: 16px; padding: 40px; margin-bottom: 50px; }
+        .highlights h2 { color: #fff; margin-bottom: 24px; font-size: 1.5em; }
+        .highlight-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+        .highlight-item { display: flex; align-items: center; gap: 12px; }
+        .highlight-item .check { color: #00ff88; font-size: 1.2em; }
+        .highlight-item span { color: #aaa; }
+        footer { text-align: center; color: #555; font-size: 0.9em; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.06); }
+        footer a { color: #00d4ff; text-decoration: none; }
+        @media (max-width: 600px) {
+            h1 { font-size: 2em; }
+            .grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🐍 Python Automation Guide</h1>
+            <p class="tagline">Everything you need to automate your side hustle and reclaim 10+ hours every week. Starter pack for busy people who want results without learning to code.</p>
+            <span class="badge">100+ Automation Scripts Included</span>
+        </header>
+
+        <div class="grid">
+            <a class="card" href="python-automation-guide/sales-page.html">
+                <div class="card-icon">📘</div>
+                <h2>Python Automation Ebook <span class="arrow">→</span></h2>
+                <p>10 battle-tested scripts covering web scraping, auto-form filling, email automation, price trackers, social media bots, and more.</p>
+                <div class="price">£9.99 — Buy Now</div>
+            </a>
+
+            <a class="card" href="chatgpt-prompts/sales-page.html">
+                <div class="card-icon">💬</div>
+                <h2>ChatGPT Prompts Bundle <span class="arrow">→</span></h2>
+                <p>100+ curated prompts for entrepreneurs, freelancers, and creators. Copy, paste, and scale your workflow instantly.</p>
+                <div class="price">£4.99 — Buy Now</div>
+            </a>
+
+            <a class="card" href="notion-automation-template/sales-page.html">
+                <div class="card-icon">📋</div>
+                <h2>Notion Automation Template <span class="arrow">→</span></h2>
+                <p>Ready-to-use Notion workspace with built-in automations. Set it up in minutes and stay organized forever.</p>
+                <div class="price">£9.99 — Buy Now</div>
+            </a>
+        </div>
+
+        <div class="highlights">
+            <h2>What's Inside the Ebook</h2>
+            <div class="highlight-grid">
+                <div class="highlight-item"><span class="check">✓</span><span>Web Scraping in 5 Minutes</span></div>
+                <div class="highlight-item"><span class="check">✓</span><span>Auto-Form Filler Script</span></div>
+                <div class="highlight-item"><span class="check">✓</span><span>Auto-Email Sender (100 emails while you sleep)</span></div>
+                <div class="highlight-item"><span class="check">✓</span><span>Social Media Auto-Poster</span></div>
+                <div class="highlight-item"><span class="check">✓</span><span>Price Tracker with Email Alerts</span></div>
+                <div class="highlight-item"><span class="check">✓</span><span>Auto-Job Applier Bot</span></div>
+                <div class="highlight-item"><span class="check">✓</span><span>Data Entry Automation</span></div>
+                <div class="highlight-item"><span class="check">✓</span><span>Appointment Reminder Bot</span></div>
+                <div class="highlight-item"><span class="check">✓</span><span>Auto-Reply Bot</span></div>
+                <div class="highlight-item"><span class="check">✓</span><span>Complete Workflow Automator</span></div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Payment secured via PayPal • Instant digital delivery</p>
+            <p style="margin-top:8px;">Questions? <a href="https://twitter.com/jonasamidu">DM on X</a> or open an issue on GitHub</p>
+            <p style="margin-top:12px; color:#333;">© 2026 JonasAmidu. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
